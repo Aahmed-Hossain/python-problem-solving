@@ -1,0 +1,10 @@
+[
+    {
+        "title": "Basic Python",
+        "author": "Maksud",
+        "isbn": "1123",
+        "genre": "py",
+        "price": 45.0,
+        "quantity": 2
+    }
+]
