@@ -1,7 +1,7 @@
 import json
 import os
 
-FILE_NAME ='books.json'
+FILE_NAME ='./books/book.json'
 
 def load_books():
     if not os.path.exists(FILE_NAME):

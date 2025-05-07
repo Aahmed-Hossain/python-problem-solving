@@ -4,7 +4,7 @@ from view_books import view_books
 from remove_book import remove_book
 from search_book import search_book
 
-def main():
+def custom_main():
     books = load_books()
 
     while True:
@@ -26,11 +26,11 @@ def main():
         elif choice == '4':
             remove_book(books)
         elif choice == '5':
-            save_books(books)
             print("Goodbye!")
             break
         else:
             print("Invalid option. Please try again.")
 
 if __name__ == "__main__":
-    main()
+    custom_main()
+    print('Running from main')

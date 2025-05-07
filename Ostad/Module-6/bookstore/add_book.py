@@ -1,11 +1,13 @@
-def is_valid_book(book, books):
-    for b in books:
-        if b['isbn'] == book['isbn']:
+from book_data import  save_books
+
+def is_valid_book(new_book, all_books):
+    for b in all_books:
+        if b['isbn'] == new_book['isbn']:
             return False
 
     return True
 
-def add_book(books):
+def add_book(new_book):
     try:
         title = input("Enter Title: ").strip()
         author = input("Enter Author: ").strip()
@@ -18,7 +20,7 @@ def add_book(books):
         if quantity < 0:
             raise ValueError("Enter Must Positive Value")
 
-        book = {
+        all_books = {
             "title": title,
             "author": author,
             "isbn": isbn,
@@ -27,8 +29,10 @@ def add_book(books):
             "quantity": quantity
         }
 
-        if is_valid_book(book, books):
-            books.append(book)
+        if is_valid_book(new_book, all_books):
+            all_books.append(new_book)
+            save_books(all_books)
+            print(f"🔥Book added sucessfully with ISBN: {isbn}")
         else:
             print("Error: A book with this ISBN already exists.")
 

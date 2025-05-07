@@ -1,0 +1,18 @@
+[
+    {
+        "title": "basic py",
+        "author": "san",
+        "isbn": "123",
+        "genre": "py",
+        "price": 23.0,
+        "quantity": 7
+    },
+    {
+        "title": "basic",
+        "author": "san 3",
+        "isbn": "456",
+        "genre": "py",
+        "price": 34.0,
+        "quantity": 6
+    }
+]
