@@ -38,3 +38,7 @@ def add_book(new_book):
 
     except ValueError as ve:
         print('Input Error', ve)
+
+
+if __name__ == "__main__":
+    print('🔥 Kindly run the main.py file')
