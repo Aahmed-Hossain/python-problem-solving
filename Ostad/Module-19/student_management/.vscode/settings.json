@@ -1,0 +1,15 @@
+{
+    "python.formatting.provider": "none",
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[vue]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[python]": {
+      "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "[html]": {
+      "editor.formatOnSave": false
+    }
+  }

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{%load crispy_forms_tags %}
+
+{% block content %}
+    <h1 class="container py-3">Create New User</h1>
+    <form
+      class="container card p-5 mt-5"
+      method="post"
+    >
+      {% csrf_token %}
+      {{form | crispy }}
+      <input class="btn btn-primary" type="submit" value="Submit"/>
+    </form>
+{% endblock %}
