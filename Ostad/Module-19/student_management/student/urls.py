@@ -10,4 +10,6 @@ urlpatterns = [
     path('update/<int:id>', views.UpdateStudent.as_view(), name='update_student'), # class based view (update)
     path('delete/<int:id>', views.delete_student, name='delete_student'),
     path('signup/', views.signup, name='signup'),
+    path('login/', views.user_login, name='login'),
+    path('logout/', views.user_logout, name='logout'),
 ]

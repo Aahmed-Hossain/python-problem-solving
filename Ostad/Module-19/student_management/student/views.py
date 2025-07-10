@@ -5,6 +5,8 @@ from django.contrib import messages
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import authenticate, login, logout
 
 # This is for your html forms
 # def home(request):
@@ -101,3 +103,26 @@ def signup(request):
         form = forms.SignUpForm()
 
     return render(request, 'student/auth_form.html', {'form' : form})
+
+def user_login(request):
+    if request.method == 'POST':
+        form = AuthenticationForm(data = request.POST)
+        if form.is_valid():
+            print(form.cleaned_data)
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            user = authenticate(username = username, password = password)
+            if user is not None:
+                login(request, user)
+                messages.add_message(request, messages.SUCCESS, 'Logged in Successfully ')
+                return redirect('home')
+            else:
+                messages.add_message(request, messages.SUCCESS, 'Invalid Credentials ')
+    else:
+        form = AuthenticationForm()
+    return render(request, 'student/auth_form.html', {'form' : form})
+
+def user_logout(request):
+    logout(request)
+    messages.add_message(request, messages.SUCCESS, 'Logged out Successfully ')
+    return redirect('home')
